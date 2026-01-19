@@ -1,1 +1,9 @@
+SourceEntity,SourceField,SourceType,TargetEntity,TargetField,TargetType,TransformRule,LookupRule,DefaultValue,Notes
+Contact,emailaddress1,nvarchar,Contact,email,nvarchar,lower(trim),,,
+Contact,mobilephone,nvarchar,Contact,phone,nvarchar,normalize_phone,,,
+Account,name,nvarchar,Account,name,nvarchar,trim,,,
+Opportunity,name,nvarchar,Opportunity,name,nvarchar,trim,,,
+Opportunity,customerid,nvarchar,Opportunity,account_id,uniqueidentifier,,lookup by account name/external id,,Dynamics often uses lookups; define the join key
+Contact,parentcustomerid,nvarchar,Contact,account_id,uniqueidentifier,,lookup by account name/external id,,Relationship mapping decision needed
+Contact,statecode,int,Contact,status,nvarchar,map_statecode,,Active,"Example: 0=Active, 1=Inactive"
 
